@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Aula 15</title>
+</head>
+<body>
+    
+    <h1 id="numero-titulo"></h1>
+    <div id="texto"></div>
+
+    <script>
+        /* 
+        const numero = prompt("Digite um número:");
+
+        document.body.innerHTML += `<h1>O número que foi digitado é ${numero}<br></h1>`;
+        document.body.innerHTML += `<p>Raiz quadrada: ${Math.sqrt(numero)}</p>`
+        document.body.innerHTML += `<p>${numero} é inteiro: ${Number.isInteger(Number(numero))}</p>`
+        document.body.innerHTML += `<p>É NaN: ${Number.isNaN(numero)}</p>`
+        document.body.innerHTML += `<p>Aredondado para baixo: ${Math.floor(numero)}</p>`
+        document.body.innerHTML += `<p>Arredondado para cima: ${Math.ceil(numero)}</p>`
+        document.body.innerHTML += `<p>Com duas casas decimais: ${numero.toFixed(2)}</p>` 
+        */
+
+    // OU (Dessa forma é melhor porque diminui a repetição de codigo e melhora a organização do HTML)
+
+        const numero = Number(prompt("Digite um número:"));
+        const numeroTitulo = document.getElementById("numero-titulo");
+        const texto = document.getElementById("texto");
+
+        numeroTitulo.innerHTML = `O número que foi digitado é ${numero}`;
+        texto.innerHTML = ""
+        texto.innerHTML += `<p>Raiz quadrada: ${Math.sqrt(numero)}</p>`;
+        texto.innerHTML += `<p>É NaN: ${Number.isNaN(numero)}</p>`;
+        texto.innerHTML += `<p>${numero} é inteiro: ${Number.isInteger(numero)}</p>`;
+        texto.innerHTML += `<p>Aredondado para baixo: ${Math.floor(numero)}</p>`;
+        texto.innerHTML += `<p>Arredondado para cima: ${Math.ceil(numero)}</p>`;
+        texto.innerHTML += `<p>Com duas casas decimais: ${numero.toFixed(2)}</p>`;
+    </script>
+</body>
+</html>
