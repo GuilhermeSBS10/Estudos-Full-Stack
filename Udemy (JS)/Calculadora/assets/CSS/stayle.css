@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Gravitas+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap');
+
+:root {
+    --primeira-color: rgb(22, 44, 55);
+    --segunda-color: rgb(255, 255, 255);
+    --terceira-color: rgb(255, 255, 255);
+    --quarta-color: rgb(48, 220, 229);
+    --quinta-color: rgb(165, 165, 165);
+    --sexta-color: rgb(80, 80, 80);
+    --screen-width: 300px;
+    --gap: 4px;
+    --col: calc((var(--screen-width) - (3 * var(--gap))) / 4);
+        
+}
+
+* {
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--primeira-color);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3em;
+    line-height: 1.5em;
+}
+
+#screen {
+    background: var(--terceira-color);
+    width: var(--screen-width);
+    height: 100px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Oswald', cursive;
+}
+
+.line {
+    height: 1px;
+    background: #ccc;
+    margin: 10px 0;
+}
+
+.container {
+    max-width: 640px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px ;
+    background: var(--segunda-color);
+}
+
+form {
+    /* Coloca números e operações lado a lado */
+    display: flex;
+    align-items: flex-start;
+    gap: var(--gap);
+    justify-content: center;
+    align-items: center;
+    width: var(--screen-width);
+}
+
+button {
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    background-clip: padding-box;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#operation_reset, #operation_dell, #operation_percentage {
+    background-color: var(--quinta-color);
+}
+
+#number-1, #number-2, #number-3, #number-4, #number-5, #number-6, #number-7, #number-8, #number-9, #number-0, #comma{
+    background-color: var(--sexta-color);
+} 
+
+.numbers {
+    /* Organiza os botões em linhas: 123 / 456 / 789 */
+    display: grid;
+    grid-template-columns: repeat(3, var(--col));
+    gap: var(--gap);
+}
+
+.numbers button {
+    width: var(--col);
+    height: var(--col);
+}
+
+.numbers #number-0 {
+    /* Deixa o botão 0 mais largo */
+    grid-column: span 2;
+    width: calc(var(--col) * 2 + var(--gap));
+    height: var(--col);
+    border-radius: 15px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.operations {
+    /* Botões de operação em coluna, do lado direito */
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    align-items: center;
+
+}
+
+.operations button {
+    width: var(--col);
+    height: var(--col);
+    background-color: var(--quarta-color);
+}
+
