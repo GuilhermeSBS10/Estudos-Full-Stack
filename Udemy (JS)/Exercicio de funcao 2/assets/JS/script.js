@@ -19,7 +19,9 @@ document.querySelector('form').addEventListener('submit', function(event){
             return;
         }
         
-        if (num % 3 === 0 && num % 5 === 0) {
+        if (num === 0) {
+            paragrafo.textContent = 'O número 0 é divisível por 3 e por 5, portanto é FizzBuzz';
+        } else if (num % 3 === 0 && num % 5 === 0) {
             paragrafo.textContent = 'FizzBuzz';
         } else if (num % 3 === 0) {
             paragrafo.textContent = 'Fizz';
